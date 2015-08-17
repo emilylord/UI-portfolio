@@ -1,0 +1,34 @@
+.callout-wrapper {
+  @include row();
+  .callout {
+    @include media($large-screen) {
+      @include span-columns(4);
+    }
+  }
+}
+
+.callout {
+  @include media(0) {
+    margin-bottom: 45px;
+  }
+  @include media($large-screen) {
+    margin-bottom: 0;
+  }
+  img {
+    width: 100%;
+  }
+  .tag-wrapper {
+    margin-top: 1.5vw;
+  }
+  h1, p {
+    @include font-size($h1-font-sizes);
+    color: $site-dark;
+  }
+  h1 {
+    margin-bottom: 0.25vw;
+  }
+  p {
+    margin: 0;
+    font-family: league_gothic_italic;
+  }
+}

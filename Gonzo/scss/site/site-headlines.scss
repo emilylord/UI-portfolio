@@ -1,0 +1,52 @@
+.sports-headlines {
+  margin-bottom: 0.875rem;
+  li {
+    margin-bottom: 0.875rem;
+    line-height: 1.1rem;
+    a {
+      color: $site-black;
+      text-decoration: none;
+      font-size: 0.8125rem;
+      @include background-animation(1s);
+      &:hover {
+        background-color: #eee;
+      }
+    }
+    &.also-in-category {
+      font-family: 'Times New Roman', serif;
+      font-style: italic;
+      font-size: 0.6875rem;
+      letter-spacing: 0.075rem;
+      a {
+        text-transform: uppercase;
+        font-style: normal;
+        font-weight: bold;
+        color: $site-yellow;
+        font-size: 0.875rem;
+        &:hover {
+          background-color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.sports-tags {
+  overflow: hidden;
+  margin-top: 1.25rem;
+  li {
+    float: left;
+    margin: 0 0.625rem 0.625rem 0;
+    a {
+      background-color: $site-yellow;
+      color: #fff;
+      padding: 0.25rem 0.625rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      @include background-animation(1s);
+      &:hover {
+        background-color: $site-black;
+      }
+    }
+  }
+}

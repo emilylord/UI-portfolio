@@ -1,0 +1,83 @@
+html {
+  overflow-y: hidden;
+}
+
+body {
+  background: url(../img/pattern-filter.png) repeat, url(../img/main_background.jpg) no-repeat center;
+  background-size: auto, cover;
+  font-family: $body-font;
+}
+
+.scroll {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-family: $body-font;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.no-multiplebgs body {
+  background: url(../img/main_background.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.contain-to-grid {
+  background-color: transparent;
+}
+
+a:focus {
+  outline: none;
+  color: inherit;
+}
+
+.page-wrapper {
+  background-color: #fff;
+  padding: 0 0.9375rem;
+  border-bottom: 10px solid rgba(170, 170, 170, 0.2);
+}
+
+::selection {
+  background-color: $site-yellow;
+  color: white;
+}
+
+.corner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ffba00;
+  color: white;
+  text-align: center;
+  font-size: 1.125rem;
+  @include background-animation(1s);
+  &:hover {
+    background-color: $site-black;
+    color: white;
+  }
+}
+
+.placeholders {
+  overflow: hidden;
+  margin-left: 0;
+  li {
+    width: 50%;
+    float: left;
+    margin-bottom: 2.5rem;
+    &:nth-child(odd) {
+      img {
+        float: left;
+      }
+    }
+    &:nth-child(even) {
+      img {
+        float: right;
+      }
+    }
+  }
+}

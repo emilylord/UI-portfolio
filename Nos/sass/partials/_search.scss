@@ -1,0 +1,114 @@
+.search-box {
+  &.main, &.secondary {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    overflow: hidden;
+    &.open {
+      display: block;
+    }
+    input, button {
+      float:left;
+      color: black;
+      border: none;
+    }
+    input {
+      padding-left: 5.5991%;
+      @include background-animation(0.5s);
+      &:focus {
+        outline: none;
+      }
+      &:hover {
+        background-color: $site-blue;
+        color: white;
+        &::-webkit-input-placeholder { /* WebKit browsers */
+          color: white;
+        }
+        &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+          color: white;
+          opacity: 1;
+        }
+        &::-moz-placeholder { /* Mozilla Firefox 19+ */
+          color: white;
+          opacity: 1;
+        }
+        &:-ms-input-placeholder { /* Internet Explorer 10+ */
+          color: white;
+        }
+      }
+    }
+    button {
+      width: 20.5%;
+      @include background-animation(0.5s);
+    }
+  }
+  &.main {
+    width: 100%;
+    height: 15vw;
+    top: 0;
+    background-color: #eee;
+    padding: 7.93958856%;
+    input, button {
+      font-size: 5vw;
+      height: 7.05882vw;
+    }
+    input {
+      width: 75.3639418%;
+      margin-right: 4.03135498%;
+      &::-webkit-input-placeholder { /* WebKit browsers */
+        color: black;
+      }
+      &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color: black;
+        opacity: 1;
+      }
+      &::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color: black;
+        opacity: 1;
+      }
+      &:-ms-input-placeholder { /* Internet Explorer 10+ */
+        color: black;
+      }
+    }
+    button {
+      background-color: white;
+      &:hover {
+        background-color: $site-blue;
+        color: white;
+      }
+    }
+  }
+  &.secondary {
+    width: 26%;
+    right: 0;
+    bottom: calc(-77px - 4.2vw);
+    padding: 30px;
+    background-color: white;
+    input, button {
+      height: 4.2vw;
+      font-size: 1.8vw;
+    }
+    input {
+      width: 79.5%;
+      background-color: $site-dark;
+      &::-webkit-input-placeholder { /* WebKit browsers */
+        color: white;
+      }
+      &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color: white;
+        opacity: 1;
+      }
+      &::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color: white;
+        opacity: 1;
+      }
+      &:-ms-input-placeholder { /* Internet Explorer 10+ */
+        color: white;
+      }
+    }
+    button {
+      background-color: #eee;
+      color: $site-dark;
+    }
+  }
+}

@@ -1,0 +1,126 @@
+.callout-detail {
+  margin-bottom: 2.5rem;
+  .callout-image {
+    position: relative;
+    .corner-overlay {
+      padding: 0.25rem 1rem;
+    }
+  }
+  .callout-description {
+    h6 {
+      margin: 0.625rem 0 0.3125rem 0;
+      span {
+        display: block;
+        font-size: 0.625rem;
+        font-weight: 700;
+        margin-bottom: 0;
+        line-height: 1.2rem;
+      }
+    }
+    a {
+      color: $site-black;
+      text-decoration: none;
+      @include background-animation(1s);
+      &:hover {
+        background-color: #eee;
+      }
+    }
+    p {
+      font-size: 0.75rem;
+      line-height: 1.125rem;
+      color: #888;
+    }
+  }
+  .stars {
+    margin: 0.1875rem 0;
+  }
+}
+
+.callout-small {
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+  img {
+    float: left;
+    width: 17%;
+    height: 3.125rem;
+    margin-right: 5%;
+  }
+  .caption {
+    float: left;
+    width: 78%;
+  }
+  h6 {
+    margin: 0;
+    line-height: 1.1rem;
+  }
+  .callout-tag {
+    background-color: $site-yellow;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0 0.1875rem;
+    margin-right: 0.3125rem;
+    @include background-animation(1s);
+    &:hover {
+      background-color: $site-black;
+      color: white;
+    }
+  }
+  .callout-title {
+    font-size: 0.84375rem;
+    color: $site-black;
+    text-decoration: none;
+    margin-right: 0.3125rem;
+    @include background-animation(1s);
+    &:hover {
+      background-color: #eee;
+    }
+  }
+  p {
+    font-size: 0.625rem;
+    font-weight: 700;
+    margin-bottom: 0;
+    line-height: 1.2rem;
+    span {
+      font-style: italic;
+    }
+  }
+  &.sidebar {
+    margin-bottom: 1.875rem;
+    span {
+      display: block;
+      line-height: 2;
+      font-size: 0.5625rem;
+      font-weight: bold;
+    }
+  }
+}
+
+.stars {
+  display: block;
+  position: relative;
+  width: 6rem;
+  height: 1.2rem;
+  background: #ddd url(../img/stars.png) no-repeat scroll;
+  .stars-overlay {
+    display: block;
+    float: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1.0625rem;
+    background: $site-yellow url(../img/stars.png) no-repeat scroll;
+    &.four {
+      width: 84%;
+    }
+    &.four-and-quarter {
+      width: 88%;
+    }
+    &.four-and-half {
+      width: 92%;
+    }
+    &.five {
+      width: 100%;
+    }
+  }
+}

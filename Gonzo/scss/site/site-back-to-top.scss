@@ -1,0 +1,41 @@
+.back-to-top {
+  &.desktop {
+    @media only screen and (max-width: 74.9375em) { //under 1200px
+      display: none;
+    }
+    position: fixed;
+    bottom: 43%;
+    right: 3.125rem;
+    width: 3.125rem;
+    height: 3.125rem;
+    opacity: 0;
+    background: #000 url(../img/top-arrow.png) 0px -50px no-repeat;
+    font-size: 0.91667em;
+    -webkit-border-radius: 1.875rem;
+    moz-border-radius: 1.875rem;
+    border-radius: 1.875rem;
+    -moz-transition: background-position, opacity .3s ease-in-out;
+    -webkit-transition: background-position, opacity .3s ease-in-out;
+    -o-transition: background-position, opacity .3s ease-in-out;
+    transition: background-position, opacity .3s ease-in-out;
+    @include background-animation(0.3s);
+    &:hover {
+      background-color: $site-yellow;
+      background-position: 0 0;
+      opacity: 1 !important;
+    }
+  }
+  &.mobile {
+    text-align: center;
+    padding: 1.25rem; //20px
+    margin-bottom: 2.5rem; //40px
+    background-color: $site-yellow;
+    color: white;
+    font-size: 1.125rem; //18px
+    border-radius: 0.25rem; //4px
+    @include background-animation(1s);
+    &:hover {
+      background-color: $site-black;
+    }
+  }
+}

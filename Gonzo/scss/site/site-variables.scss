@@ -1,0 +1,41 @@
+$site-black: $oil; //#333
+$site-yellow: #ffba00;
+
+//Sass maps
+$section-colors: (
+        home: $site-yellow,
+        music: #0AC4FF,
+        news: #37DE21,
+        tech: #258FEF,
+        features: #000,
+        reviews: #FF9B1A
+);
+$sidebar-social: (
+        rss: 0 -55px,
+        twitter: -55px -55px,
+        facebook: -110px -55px,
+);
+$sidebar-social-hover: (
+        rss: 0 0,
+        twitter: -55px 0,
+        facebook: -110px 0
+);
+$footer-social: (
+        pinterest: -11px -50px,
+        facebook: -93px -50px,
+        twitter: -51px -50px,
+        flickr: -178px -51px,
+        vimeo: -133px -50px,
+        youtube: -232px -51px
+);
+
+
+
+$body-font: 'Open Sans', sans-serif;
+
+@mixin background-animation($duration) {
+  -webkit-transition: background-color $duration;
+  -moz-transition: background-color $duration;
+  -o-transition: background-color $duration;
+  transition: background-color $duration;
+}

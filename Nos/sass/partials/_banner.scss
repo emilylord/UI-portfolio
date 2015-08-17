@@ -1,0 +1,12 @@
+.ad-banner {
+  @include vertical-spacing();
+  background-color: #000;
+  color: white;
+  border: 3vw solid #232323;
+  text-align: center;
+  h2 {
+    font-size: 5vw;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+}

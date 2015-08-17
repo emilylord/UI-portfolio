@@ -1,0 +1,55 @@
+.highlight-wrapper {
+  display: flex;
+  align-items: stretch;
+  @include media(0) {
+    padding: 3.9vw 0;
+    justify-content: space-between;
+  }
+  @include media($large-screen) {
+    padding: 3.9vw 2vw;
+    justify-content: space-around;
+  }
+  .highlight {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-basis: 31%;
+    text-align: center;
+    -webkit-box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.04);
+    box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.04);
+    @media only screen and (max-width: $large-screen) {
+      flex-wrap: wrap;
+    }
+    img {
+      width: 100%;
+    }
+    a {
+      display: block;
+    }
+    h1 {
+      margin: 0;
+      background-color: $site-dark;
+      text-transform: uppercase;
+      color: #ffe;
+      padding: 0.5vw;
+      @include font-size($h1-font-sizes);
+    }
+    .highlight-body {
+      flex: 1;
+      background-color: white;
+      padding: 1vw;
+      p, a {
+        font-size: 1.2vw;
+        font-family: 'Times New Roman', serif;
+      }
+      a {
+        text-transform: uppercase;
+        color: $site-dark;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

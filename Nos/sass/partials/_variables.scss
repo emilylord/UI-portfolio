@@ -1,0 +1,43 @@
+$body-font: league_gothic;
+
+$small-screen: 480px;
+$medium-screen: 768px;
+$large-screen: 992px;
+$xlarge-screen: 1200px;
+
+$site-blue: #01b0f1;
+$site-dark: #333;
+
+$h1-font-sizes: (
+        0: 6vw,
+        $large-screen: 2.15vw,
+);
+$tag-wrapper-font-sizes: (
+        0: 2.5vw,
+        $large-screen: 1vw,
+);
+
+
+@mixin background-animation($duration) {
+  -webkit-transition: background-color $duration;
+  -moz-transition: background-color $duration;
+  -o-transition: background-color $duration;
+  transition: background-color $duration;
+}
+
+@mixin vertical-spacing() {
+  @include media(0) {
+    margin-bottom: 10vw;
+  }
+  @include media($large-screen) {
+    margin-bottom: 4.6vw;
+  }
+}
+
+@mixin font-size($fs-map) {
+  @each $fs-breakpoint, $fs-font-size in $fs-map {
+    @include media($fs-breakpoint) {
+      font-size: $fs-font-size;
+    }
+  }
+}

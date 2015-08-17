@@ -1,0 +1,53 @@
+.social-menu {
+  overflow: hidden;
+  li {
+    float: left;
+    width: 33.33333333%;
+    a {
+      display: block;
+      width: 3.125rem;
+      margin: auto;
+      position: relative;
+      span {
+        display: block;
+        font-size: 0.625rem; //10px
+        text-align: center;
+        color: $site-black;
+      }
+      &:hover {
+        .hover {
+          opacity: 0;
+        }
+      }
+    }
+  }
+  .icon {
+    background: url(../img/social-media-large.png) no-repeat;
+    height: 50px;
+    margin-bottom: 0.5625rem;
+    &.hover {
+      position: absolute;
+      z-index: 10;
+      width: 50px;
+      height: 50px;
+      top: 0;
+      opacity: 1;
+      -webkit-transition: opacity 0.5s;
+      -moz-transition: opacity 0.5s;
+      -o-transition: opacity 0.5s;
+      transition: opacity 0.5s;
+    }
+  }
+  //iterator using sidebar-social and sidebar-social-hover maps to give each social icon
+  //the correct background, including hover state
+  @each $icon, $background-position in $sidebar-social {
+    .icon.#{$icon} {
+      background-position: $background-position;
+    }
+    @each $icon, $background-position-hover in $sidebar-social-hover {
+      .icon.#{$icon}.hover {
+        background-position: $background-position-hover;
+      }
+    }
+  }
+}

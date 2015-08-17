@@ -1,0 +1,174 @@
+$bright-red: #fb4343;
+$dark-red: #b83143;
+$light-gray: #f0f0f0;
+
+$outer-border-width: 2.2vw;
+$inner-border-width: 3.9vw;
+$total-borders: 6vw;
+
+.full-width-wrapper {
+  position: relative;
+  @include vertical-spacing();
+  display: flex;
+  align-items: stretch;
+  .page-wrapper {
+    flex: 16;
+    position: relative;
+    max-width: inherit;
+    border: solid $site-dark;
+    border-width: $inner-border-width 0;
+    margin: $outer-border-width 0;
+    &::before, &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: $outer-border-width;
+      background-color: $site-dark;
+    }
+    &::before {
+      top: -$total-borders;
+    }
+    &::after {
+      bottom: -$total-borders;
+    }
+  }
+  .callout {
+    margin-bottom: 2.5vw;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .two-columns-wide-right, .two-columns-wide-left {
+    position: relative;
+    @include clearfix;
+    @include media($large-screen) {
+      @include row();
+      max-width: 1675px;
+      margin: 0 auto;
+    }
+    section {
+      margin-bottom: 0;
+    }
+    .left, .right {
+      margin-bottom: 0;
+    }
+  }
+  .two-columns-wide-right {
+    .left {
+      position: relative;
+      background-color: white;
+      padding: 1.9vw 1.9vw 0 1.9vw;
+      &::before, &::after {
+        content: '';
+        width: 100%;
+        position: absolute;
+        left: 0;
+        height: $total-borders;
+        background-color: white;
+        z-index: 9;
+      }
+      &::before {
+        top: -$total-borders;
+      }
+      &::after {
+        bottom: -$total-borders;
+      }
+      @include media($large-screen) {
+        @include span-columns(4);
+      }
+    }
+    .right {
+      @include media($large-screen) {
+        @include span-columns(8);
+      }
+      & > h1 {
+        position: absolute;
+        top: -3.9vw;
+        padding-left: 3.1vw;
+        margin: 0.65vw 0;
+        color: white;
+        font-family: league_gothic_italic;
+        @include font-size($h1-font-sizes);
+      }
+    }
+  }
+  .two-columns-wide-left {
+    .left {
+      @include media($large-screen) {
+        @include span-columns(8);
+      }
+      border: 1px solid $site-dark;
+      border-width: $outer-border-width 0;
+      padding-bottom: $inner-border-width;
+      & > h1 {
+        padding-left: 3.1vw;
+        margin: 0.65vw 0;
+        color: white;
+        font-family: league_gothic_italic;
+        @include font-size($h1-font-sizes);
+      }
+    }
+    .right {
+      @include media($large-screen) {
+        @include span-columns(4);
+      }
+      .callout {
+        padding-right: 1.9vw;
+      }
+    }
+  }
+  .filler, .filler-skew {
+    position: relative;
+    border-top: $total-borders solid;
+    border-bottom: $total-borders solid;
+    //multiple borders
+    &::before, &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 2.181vw;
+      background-color: $site-dark;
+    }
+    &::before {
+      top: -$total-borders;
+    }
+    &::after {
+      bottom: -6.07vw;
+    }
+  }
+  .filler {
+    flex: 1.5;
+  }
+  .filler-skew {
+    flex: 1;
+    -webkit-transform: skew(0deg,26.5deg);
+    -moz-transform: skew(0deg,26.5deg);
+    -o-transform: skew(0deg,26.5deg);
+    transform: skew(0deg,26.5deg);
+    &:first-of-type {
+      top: -1.2vw;
+      opacity: 0.7;
+    }
+    &:last-of-type {
+      top: 1.2vw;
+      opacity: 0.9;
+    }
+  }
+  &.red {
+    .page-wrapper, .filler-skew {
+      background-color: $bright-red;
+      border-color: $dark-red;
+    }
+  }
+  &.blue {
+    .page-wrapper, .filler-skew {
+      background-color: $light-gray;
+      border-color: $site-blue;
+    }
+    .highlight-wrapper {
+      background-color: $light-gray;
+    }
+  }
+}
