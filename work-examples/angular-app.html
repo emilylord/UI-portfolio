@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Angular App</title>
+
+  <link href='http://fonts.googleapis.com/css?family=Roboto:100,400,300,500,700' rel='stylesheet' type='text/css'>
+  <link href="css/main.css" rel="stylesheet">
+  <link href="css/angular-apps.css" rel="stylesheet">
+
+  <script src="js/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-app="wineApp" ng-controller="wineCtrl" class="wine">
+  <div class="container">
+    <div class="row add-new">
+      <div class="col-md-12">
+        <h2>Wine List</h2>
+      </div>
+      <div class="col-md-12">
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#add" aria-controls="add" role="tab" data-toggle="tab">Add New</a></li>
+          <li role="presentation"><a href="#search" aria-controls="search" role="tab" data-toggle="tab">Search</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="add">
+            <h3>Add a New Wine</h3>
+            <div class="row">
+              <div class="col-md-2">
+                <h4>Brand</h4>
+                <input type="text" ng-model="brand">
+              </div>
+              <div class="col-md-2">
+                <h4>Type</h4>
+                <input type="text" ng-model="type">
+              </div>
+              <div class="col-md-2">
+                <h4>Year</h4>
+                <input type="text" ng-model="year">
+              </div>
+              <div class="col-md-2">
+                <h4>Country</h4>
+                <input type="text" ng-model="country">
+              </div>
+              <div class="col-md-2">
+                <h4>Price per Bottle</h4>
+                <input type="text" ng-model="price">
+              </div>
+              <div class="col-md-2">
+                <h4>Bottles in inventory</h4>
+                <input type="text" ng-model="inventory">
+              </div>
+              <div class="col-md-12">
+                <button ng-click="addNew(item)">Add</button>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="search">
+            <h3>Search for a Wine</h3>
+            <input type="text" ng-model="searchFilter">
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Current Wines</h3>
+      </div>
+      <div class="col-md-2">
+        <h4>Brand</h4>
+      </div>
+      <div class="col-md-2">
+        <h4>Type</h4>
+      </div>
+      <div class="col-md-2">
+        <h4>Year</h4>
+      </div>
+      <div class="col-md-2">
+        <h4>Country</h4>
+      </div>
+      <div class="col-md-2">
+        <h4>Price</h4>
+      </div>
+      <div class="col-md-2">
+        <h4>Inventory</h4>
+      </div>
+    </div>
+    <div class="row" ng-repeat="wine in wineList | filter:searchFilter">
+      <div class="col-md-2">
+        {{wine.brand}}
+      </div>
+      <div class="col-md-2">
+        {{wine.type}}
+      </div>
+      <div class="col-md-2">
+        {{wine.year}}
+      </div>
+      <div class="col-md-2">
+        {{wine.country}}
+      </div>
+      <div class="col-md-2">
+        ${{wine.price}}
+      </div>
+      <div class="col-md-2">
+        {{wine.inventory}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+  var app = angular.module('wineApp', []);
+  app.controller('wineCtrl', function($scope) {
+    $scope.wineList = [
+      {
+        brand: "Emily's Winery",
+        type: "Merlot",
+        year: 1999,
+        country: "Italy",
+        price: 29.99,
+        inventory: 10
+      },
+      {
+        brand: "Grape Vineyards",
+        type: "Pinot Noir",
+        year: 2007,
+        country: "Australia",
+        price: 19.99,
+        inventory: 12
+      },
+      {
+        brand: "Emily's Winery",
+        type: "Chardonnay",
+        year: 2014,
+        country: "New Zealand",
+        price: 24.99,
+        inventory: 20
+      },
+      {
+        brand: "California's Best",
+        type: "Pinot Gris",
+        year: 2012,
+        country: "United States",
+        price: 18.99,
+        inventory: 25
+      },
+      {
+        brand: "European Wines",
+        type: "Brut",
+        year: 2013,
+        country: "Spain",
+        price: 34.99,
+        inventory: 8
+      }
+    ];
+
+    $scope.addNew = function(item)
+    {
+      item = {
+        brand: $scope.brand,
+        type: $scope.type,
+        year: $scope.year,
+        country: $scope.country,
+        price: $scope.price,
+        inventory: $scope.inventory
+      };
+      $scope.wineList.push(item);
+      $('input[type="text"]').val('');
+    }
+  });
+</script>
+</body>
+</html>

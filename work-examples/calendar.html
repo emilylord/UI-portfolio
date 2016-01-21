@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Responsive Calendar</title>
+
+  <link href='http://fonts.googleapis.com/css?family=Roboto:100,400,300,500,700' rel='stylesheet' type='text/css'>
+  <link href="../../css/jquery-ui.min.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <link href="css/calendar.css" rel="stylesheet">
+</head>
+<body>
+  <h2 class="calendar-header">Responsive calendar built with Flexbox</h2>
+  <div class="calendar-wrapper">
+    <h3>September 2015</h3>
+    <div class="legend">
+      <div class="key personal"></div>
+      <span>Personal</span>
+      <div class="key professional"></div>
+      <span>Professional</span>
+    </div>
+    <div class="calendar">
+      <div class="cal-row labels">
+        <div class="col col-1">
+          <p>Sunday</p>
+        </div>
+        <div class="col col-2">
+          <p>Monday</p>
+        </div>
+        <div class="col col-3">
+          <p>Tuesday</p>
+        </div>
+        <div class="col col-4">
+          <p>Wednesday</p>
+        </div>
+        <div class="col col-5">
+          <p>Thursday</p>
+        </div>
+        <div class="col col-6">
+          <p>Friday</p>
+        </div>
+        <div class="col col-7">
+          <p>Saturday</p>
+        </div>
+      </div>
+      <div class="cal-row week">
+        <div class="col col-1 alt-month">
+          <p>30</p>
+        </div>
+        <div class="col col-2 alt-month">
+          <p>31</p>
+        </div>
+        <div class="col col-3">
+          <p>1</p>
+          <a href="#" class="calendar-event personal">
+            <span class="event">Mortgage bill due</span>
+            <span class="time">All day</span>
+          </a>
+        </div>
+        <div class="col col-4">
+          <p>2</p>
+        </div>
+        <div class="col col-5">
+          <p>3</p>
+        </div>
+        <div class="col col-6">
+          <p>4</p>
+        </div>
+        <div class="col col-7">
+          <p>5</p>
+        </div>
+      </div>
+      <div class="cal-row week">
+        <div class="col col-1">
+          <p>6</p>
+        </div>
+        <div class="col col-2">
+          <p>7</p>
+        </div>
+        <div class="col col-3">
+          <p>8</p>
+        </div>
+        <div class="col col-4">
+          <p>9</p>
+        </div>
+        <div class="col col-5">
+          <p>10</p>
+          <a href="#" class="calendar-event professional">
+            <span class="event">Lunch &amp; Learn</span>
+            <span class="time">12:00PM</span>
+          </a>
+        </div>
+        <div class="col col-6">
+          <p>11</p>
+        </div>
+        <div class="col col-7">
+          <p>12</p>
+        </div>
+      </div>
+      <div class="cal-row week">
+        <div class="col col-1">
+          <p>13</p>
+        </div>
+        <div class="col col-2">
+          <p>14</p>
+        </div>
+        <div class="col col-3">
+          <p>15</p>
+        </div>
+        <div class="col col-4">
+          <p>16</p>
+        </div>
+        <div class="col col-5">
+          <p>17</p>
+        </div>
+        <div class="col col-6">
+          <p>18</p>
+        </div>
+        <div class="col col-7">
+          <p>19</p>
+        </div>
+      </div>
+      <div class="cal-row week">
+        <div class="col col-1">
+          <p>20</p>
+        </div>
+        <div class="col col-2">
+          <p>21</p>
+        </div>
+        <div class="col col-3">
+          <p>22</p>
+        </div>
+        <div class="col col-4">
+          <p>23</p>
+        </div>
+        <div class="col col-5">
+          <p>24</p>
+        </div>
+        <div class="col col-6">
+          <p>25</p>
+        </div>
+        <div class="col col-7">
+          <p>26</p>
+        </div>
+      </div>
+      <div class="cal-row week">
+        <div class="col col-1">
+          <p>27</p>
+        </div>
+        <div class="col col-2">
+          <p>28</p>
+        </div>
+        <div class="col col-3">
+          <p>29</p>
+        </div>
+        <div class="col col-4">
+          <p>30</p>
+        </div>
+        <div class="col col-5 alt-month">
+          <p>1</p>
+        </div>
+        <div class="col col-6 alt-month">
+          <p>2</p>
+        </div>
+        <div class="col col-7 alt-month">
+          <p>3</p>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Add Event</h4>
+          </div>
+          <div class="modal-body">
+            <div class="intro">
+              <label for="title">Event</label>
+              <input type="text" id="title">
+            </div>
+            <div class="type">
+              <input type="radio" class="personal">Personal
+              <input type="radio" class="professional">Professional
+            </div>
+            <div class="date-from">
+              <p>From</p>
+              <input type="date" id="datepickerFrom" value="2015-09-01">
+              <div class="time">
+                <input type="time" value="00:00">
+              </div>
+            </div>
+            <div class="date-to">
+              <p>To</p>
+              <input type="date" id="datepickerTo">
+              <div class="time">
+                <input type="time" value="23:00">
+              </div>
+            </div>
+            <label for="notes">Notes</label>
+            <textarea name="notes" id="notes" cols="30" rows="10"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary">Save</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+  </div>
+  <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
+  <script src="../../js/jquery-ui.min.js"></script>
+  <script>
+    $(function() {
+      $( "#datepickerFrom" ).datepicker();
+
+      //construct today's date and show the modal
+      $('.col').on('click', function() {
+        var thisDate = "2015-";
+        var thisMonth = 9;
+        var thisDay = $(this).find('p').text();
+
+        if($(this).hasClass('alt-month')) {
+          if(thisDay > 30) {
+            thisDate += '08-';
+          }
+          else {
+            thisDate += '10-';
+          }
+        }
+        else {
+          thisDate += '09-';
+        }
+        if(thisDay.length < 2) {
+          thisDay = '0' + thisDay;
+        }
+
+        thisDate += thisDay;
+
+        $('.modal').find('input[type=date]').attr('value', thisDate);
+
+        $('.modal').modal('show');
+      });
+
+      //construct event after it is built
+      $('.modal').on('click', '.btn-primary', function() {
+        $()
+      });
+
+      //wipe out modal when cancel is clicked
+    });
+  </script>
+</body>
+</html>
