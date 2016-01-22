@@ -1,4 +1,31 @@
-.wine .add-new {
+.wine {
   margin-bottom: 50px; }
-  .wine .add-new input {
-    margin-bottom: 20px; }
+  .wine .image-wrapper {
+    position: relative;
+    margin-bottom: 30px; }
+    .wine .image-wrapper img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover; }
+    .wine .image-wrapper .small {
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+      margin-bottom: 0;
+      color: white;
+      font-size: 11px; }
+  .wine h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -25px;
+    margin-left: -60px;
+    color: white; }
+  .wine .add-new {
+    margin-bottom: 50px; }
+    .wine .add-new input {
+      margin-bottom: 20px; }
+  .wine .tab-pane {
+    padding-top: 15px; }
+    .wine .tab-pane input {
+      width: 100%; }
